@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.181
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Vorge.rotjs", "Vorge.rotjs\Vorge.rotjs.fsproj", "{604CC578-31ED-4512-8987-DB262F5FFBDE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{604CC578-31ED-4512-8987-DB262F5FFBDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{604CC578-31ED-4512-8987-DB262F5FFBDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{604CC578-31ED-4512-8987-DB262F5FFBDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{604CC578-31ED-4512-8987-DB262F5FFBDE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F97D90FF-9C09-4A80-9FA0-9B079790FF55}
+	EndGlobalSection
+EndGlobal
