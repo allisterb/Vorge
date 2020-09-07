@@ -1,6 +1,7 @@
 ﻿namespace Vorge.rotjs
 
 open WebSharper
+open WebSharper.UI
 open WebSharper.JavaScript
 open WebSharper.InterfaceGenerator
 
@@ -39,16 +40,19 @@ module Definition =
         }
 
     let Display = 
-        Class "Display"
+        Class "ROT.Display"
         |+> Static [
-            Constructor(DisplayOptions?o) 
-            |> WithInline "new ROT.Display($o);"
-        ] 
+            Constructor(DisplayOptions? o)
+        ]
+        |+> Instance [
+            "getContainer" => T<unit> ^-> T<HTMLElement>
+            "draw" => (T<int> * T<int> * T<string>)  ^-> T<unit>
+        ]
 
     let Assembly =
         Assembly [
             Namespace "rotjs.Resources" [
-                Resource "Js" "https://cdn.jsdelivr.net/npm/rot-js@2.1.4/dist/rot.min.js"
+                Resource "Js" "rotjs/rot.min.js"
                 |> AssemblyWide
             ]
             Namespace "rotjs" [

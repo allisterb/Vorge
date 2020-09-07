@@ -5,6 +5,8 @@ open WebSharper.JavaScript
 open WebSharper.JQuery
 open WebSharper.UI
 open WebSharper.UI.Client
+open WebSharper.UI.DomUtility
+open WebSharper.UI.Html
 open WebSharper.UI.Templating
 
 open rotjs
@@ -16,13 +18,15 @@ module Client =
 
     [<SPAEntryPoint>]
     let Main () =
+        let container = Vorge.Bootstrap.Controls.Container
         let o = 
             DisplayOptions (
-                Width = 4,
-                Height = 5     
+                Width = 200,
+                Height = 500     
             )
-        Display(o) |> ignore
+        let d = Display(o)
+        d.Draw(0, 0, "A")
+        JQuery("#main").Append(d.GetContainer()) |> ignore
         Doc.Empty
         
-        //let d = new ROT.Display()
-        //|> Doc.RunById "main"
+        
