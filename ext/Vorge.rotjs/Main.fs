@@ -15,7 +15,7 @@ module Definition =
         ]
 
     let DisplayOptions =
-        Pattern.Config "Options" {
+        Pattern.Config "DisplayOptions" {
             Required = []
             Optional = [
                 "width", T<int>
@@ -41,13 +41,17 @@ module Definition =
     let Display = 
         Class "Display"
         |+> Static [
-            Constructor(DisplayOptions.Type)
-            //|>WithInline("$($target).terminal($interpreter, $options);")
+            Constructor(DisplayOptions?o) 
+            |> WithInline "new ROT.Display($o);"
         ] 
 
     let Assembly =
         Assembly [
-            Namespace "ROT" [
+            Namespace "rotjs.Resources" [
+                Resource "Js" "https://cdn.jsdelivr.net/npm/rot-js@2.1.4/dist/rot.min.js"
+                |> AssemblyWide
+            ]
+            Namespace "rotjs" [
                  DisplayLayout
                  DisplayOptions
                  Display
